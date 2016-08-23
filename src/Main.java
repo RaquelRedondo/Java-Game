@@ -10,12 +10,12 @@ public class Main {
 		
 		BlockBreakerPanel panel = new BlockBreakerPanel();
 		
-		
-		panel.setAlignmentX(Panel.CENTER_ALIGNMENT);
 		frame.add(panel);
 		frame.setVisible(true);
 		
-		frame.setSize(600, 520);
+		//Set frame size and not resizable
+		frame.setSize(680, 520);
+		frame.setResizable(false);
 	}
 	
 }
