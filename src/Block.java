@@ -8,6 +8,9 @@ public class Block extends Rectangle{
 
 	Image image;
 	
+	int nX = 1;
+	int nY = 1;
+	
 	Block (int coordX, int coordY, int w, int h, String s){
 		
 		x = coordX;
