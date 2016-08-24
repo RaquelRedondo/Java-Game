@@ -4,8 +4,6 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
-import javafx.scene.input.KeyCode;
-
 public class BlockBreakerPanel extends JPanel implements KeyListener {
 	
 	ArrayList<Block> blocks = new ArrayList<Block>();
@@ -16,7 +14,7 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 	
 	BlockBreakerPanel(){
 		
-		base = new Block(170, 500, 70, 20, "rectangle.png");
+		base = new Block(200, 500, 70, 20, "rectangle.png");
 		
 		for (int i=0; i<8; i++){
 			blocks.add(new Block((i*72+2), 0, 70, 20, "rectangle.png"));
@@ -67,11 +65,11 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 		}
 		
 		
-		if(e.getKeyCode() == KeyEvent.VK_LEFT){
+		if(e.getKeyCode() == KeyEvent.VK_LEFT && base.x > 0){
 			base.x -= 15;
 		}
 		
-		if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+		if(e.getKeyCode() == KeyEvent.VK_RIGHT && base.x < (getWidth()-base.getWidth())){
 			base.x += 15;
 		}
 		

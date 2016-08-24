@@ -1,5 +1,3 @@
-import java.awt.Panel;
-
 import javax.swing.JFrame;
 
 public class Main {
@@ -14,7 +12,7 @@ public class Main {
 		frame.setVisible(true);
 		
 		//Set frame size and not resizable
-		frame.setSize(680, 520);
+		frame.setSize(600, 520);
 		frame.setResizable(false);
 	}
 	
