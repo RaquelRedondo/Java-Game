@@ -10,6 +10,7 @@ public class Block extends Rectangle{
 	
 	int nX = 1;
 	int nY = 1;
+	boolean destroyed = false;
 	
 	Block (int coordX, int coordY, int w, int h, String s){
 		
