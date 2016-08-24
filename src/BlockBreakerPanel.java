@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 
 public class BlockBreakerPanel extends JPanel implements KeyListener {
 	
+	ArrayList<Block> balls = new ArrayList<Block>();
 	ArrayList<Block> blocks = new ArrayList<Block>();
 	Block base;
 	
@@ -14,7 +15,8 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 	
 	BlockBreakerPanel(){
 		
-		base = new Block(200, 500, 70, 20, "rectangle.png");
+		balls.add(new Block(250, 400, 30,30, "ball.png"));
+		base = new Block(240, 500, 70, 20, "rectangle.png");
 		
 		for (int i=0; i<8; i++){
 			blocks.add(new Block((i*72+2), 0, 70, 20, "rectangle.png"));
@@ -38,6 +40,10 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 		super.paintComponent(g);
 		for (Block b : blocks){
 			b.draw(g, this);
+		}
+		
+		for (Block ball : balls){
+			ball.draw(g, this);
 		}
 		
 		base.draw(g,this);
