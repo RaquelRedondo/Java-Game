@@ -9,7 +9,7 @@ public class BlockBreakerPanel extends JPanel {
 	BlockBreakerPanel(){
 		
 		for (int i=0; i<8; i++){
-			blocks.add(new Block((i*72+2), 0, 70, 22, "rectangle.png"));
+			blocks.add(new Block((i*72+2), 0, 70, 20, "rectangle.png"));
 			
 			blocks.add(new Block((i*72+2), 20, 70, 20, "rectangle.png"));
 			
