@@ -40,9 +40,7 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 		//Erase screen and reprint
 		super.paintComponent(g);
 		for (Block block : blocks){
-			if (!block.destroyed){
-				block.draw(g, this);
-			}
+			block.draw(g, this);
 		}
 		
 		for (Block ball : balls){
@@ -60,12 +58,13 @@ public class BlockBreakerPanel extends JPanel implements KeyListener {
 			if (ball.x > getWidth() - ballSize || ball.x < 0){
 				ball.nX *= -1;
 			}
-			if ( ball.intersects(base) || ball.y < 80) {
+			if ( ball.intersects(base) || ball.y < 0) {
 				ball.nY *= -1;
 			}
 			for (Block block : blocks){
-				if (ball.intersects(block)){
+				if (ball.intersects(block) && !block.destroyed){
 					block.destroyed = true;
+					ball.nY *= -1;
 				}
 			}
 		}

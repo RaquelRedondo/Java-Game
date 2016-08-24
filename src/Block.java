@@ -8,8 +8,8 @@ public class Block extends Rectangle{
 
 	Image image;
 	
-	int nX = 1;
-	int nY = 1;
+	int nX = 2;
+	int nY = 2;
 	boolean destroyed = false;
 	
 	Block (int coordX, int coordY, int w, int h, String s){
@@ -24,7 +24,8 @@ public class Block extends Rectangle{
 	}
 	
 	public void draw(Graphics g, Component c){
-		g.drawImage(image, x, y, width, height, c);
+		if(!destroyed)
+			g.drawImage(image, x, y, width, height, c);
 	}
 	
 	
